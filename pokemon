@@ -1,0 +1,10 @@
+pokemon <- read.csv(file.choose())
+nrow(pokemon)
+ncol(pokemon)
+
+
+#analyze the defense of each pokemon
+
+pl <- ggplot(pokemon, aes(x=defense))
+pl +geom_histogram(binwidth = 10, aes(fill=type2), color ="black")
++ guide_legend(title="Medium of Travel")
