@@ -1,0 +1,18 @@
+geoData <- read.csv(file.choose())
+InfantData <- read.csv(file.choose())
+pertusisRates <- read.csv(file.choose())
+StudentData <- read.csv(file.choose())
+
+head(geoData)
+head(InfantData)
+head(pertusisRates)
+head(StudentData)
+merge1 <- merge(geoData, StudentData, by.x="school_code", by.y="school_code") 
+head(merge1)
+merge2 <- merge( merge1, pertusisRates, by.x="COUNTY", by.y="county")
+finaldata <- merge(merge2, InfantData, by.x="COUNTY", by.y="COUNTY")
+
+nrow(finaldata)
+ncol(finaldata)
+str(finaldata)
+summary(finaldata)
