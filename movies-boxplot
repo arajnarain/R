@@ -1,0 +1,6 @@
+moviedata <- read.csv(file.choose())
+head(moviedata)
+colnames(moviedata) <- cbind("movie", "genre", "rating", "aud_rating", "budget", "year")
+head(moviedata)
+plot <- ggplot(data=moviedata, aes(x=genre, y=aud_rating, color=genre))
+plot + geom_boxplot() + geom_point()
